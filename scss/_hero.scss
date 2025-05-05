@@ -1,0 +1,74 @@
+@mixin iconGrid($side, $value) {
+    position: absolute;
+    z-index: -10;
+    #{$side}: $value;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 19px;
+    margin: 0 9px;
+}
+
+.hero-section {
+    height: 640px;
+    max-width: 1536px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto;
+    position: relative;
+
+    .content {
+        max-width: 480px;
+        margin: 0 auto;
+        display: grid;
+        gap: 40px;
+        color: $color-deep-blue;
+        text-align: center;
+
+        .hero-title {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.icon-grid-left {
+    @include iconGrid(left, 0);
+}
+
+.icon-grid-right {
+    @include iconGrid(right, 0);
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba($color: $color-deep-blue, $alpha: 0.1);
+    width: 117px;
+    height: 116px;
+}
+
+@for $i from 1 through 4 {
+    .col-start-#{$i} {
+        grid-column-start: $i;
+    }
+
+    .row-start-#{$i} {
+        grid-row-start: $i;
+    }
+
+    .col-end-#{$i} {
+        grid-column-end: $i;
+    }
+
+    .row-end-#{$i} {
+        grid-row-end: $i;
+    }
+}
