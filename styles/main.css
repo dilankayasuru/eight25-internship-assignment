@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("assets/fonts/DMSans-Regular.woff2") format("woff"), url("assets/fonts/DMSans-Black.woff2") format("woff");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("assets/fonts/DMSans-Black.woff2") format("woff"), url("assets/fonts/DMSans-Black.woff2") format("woff");
+}
+* {
+  border: none;
+  padding: none;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */
