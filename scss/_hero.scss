@@ -1,6 +1,7 @@
 @use "variables" as *;
+@use "responsive" as *;
 
-@mixin iconGrid($side, $value) {
+@mixin iconGrid($side, $value, $md-side, $md-value) {
     position: absolute;
     z-index: -10;
     #{$side}: $value;
@@ -10,6 +11,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 19px;
     margin: 0 9px;
+    filter: blur(10px);
+
+    @include device(lg) {
+        filter: none;
+        #{$md-side}: $md-value;
+        bottom: auto;
+        top: auto;
+    }
 }
 
 .hero-section {
@@ -20,6 +29,11 @@
     align-items: center;
     margin: 200px auto;
     position: relative;
+    overflow: visible !important;
+
+    @include device(lg) {
+        overflow: hidden !important;
+    }
 
     .content {
         max-width: 480px;
@@ -39,11 +53,11 @@
 }
 
 .icon-grid-left {
-    @include iconGrid(left, 0);
+    @include iconGrid(top, -50%, left, 0);
 }
 
 .icon-grid-right {
-    @include iconGrid(right, 0);
+    @include iconGrid(bottom, -50%, right, 0);
 }
 
 .icon-box {
