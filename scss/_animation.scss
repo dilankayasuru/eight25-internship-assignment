@@ -47,3 +47,56 @@
 .reveal-from-bottom-no-opacity {
     @include reveal-animation(translateY(50px), translateY(0), false);
 }
+
+@mixin animated-gradient {
+    $name: animated-gradient-#{unique-id()};
+
+    @keyframes #{$name} {
+        @content;
+    }
+
+    position: absolute;
+    height: 320px;
+    width: 320px;
+    background: beige;
+    border-radius: 100%;
+    background: radial-gradient(#D8F9FD, #D1C1F7, #0F52BD, rgba(0, 0, 0, 0));
+    filter: blur(50px);
+    animation: $name 5s linear infinite alternate;
+}
+
+.animated-gradient-1 {
+    @include animated-gradient() {
+        0% {
+            left: 80%;
+            top: -30%;
+            scale: 2;
+        }
+
+        50% {
+            top: -15%;
+        }
+
+        100% {
+            top: -30%;
+            left: 65%;
+            scale: 1;
+        }
+    }
+}
+
+.animated-gradient-2 {
+    @include animated-gradient() {
+        0% {
+            top: 0%;
+            left: -10%;
+            scale: 1.5;
+        }
+
+        100% {
+            left: 80%;
+            top: -30%;
+            scale: 1.5;
+        }
+    }
+}
