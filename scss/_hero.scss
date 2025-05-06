@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @mixin iconGrid($side, $value) {
     position: absolute;
     z-index: -10;

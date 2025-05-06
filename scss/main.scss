@@ -1,8 +1,8 @@
-@import "variables";
-@import "hero";
-@import "banner";
-@import "reviews";
-@import "cta";
+@use "variables" as *;
+@use "hero";
+@use "banner";
+@use "reviews";
+@use "cta";
 
 @font-face {
     font-family: "DM Sans";

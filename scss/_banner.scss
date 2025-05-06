@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @mixin background-banner-gradient() {
     background: #6b1065;
     background: linear-gradient(135deg, #ff59fc -40%, #6b1065 36%);
