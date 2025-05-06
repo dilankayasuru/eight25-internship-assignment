@@ -1,6 +1,7 @@
 @import "variables";
 @import "hero";
 @import "banner";
+@import "reviews";
 
 @font-face {
     font-family: "DM Sans";
@@ -24,7 +25,7 @@
     font-family: "DM Sans";
 }
 
-button {
+@mixin button() {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,11 +52,13 @@ button {
 }
 
 .primary-btn {
+    @include button();
     background-color: $color-pink;
     color: $color-white;
 }
 
 .secondary-btn {
+    @include button();
     background-color: $color-secondary-btn;
     color: $color-white;
 }

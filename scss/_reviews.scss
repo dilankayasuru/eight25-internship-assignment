@@ -1,0 +1,96 @@
+.reviews {
+  position: relative;
+  overflow: hidden;
+
+  .content {
+    max-width: 1536px;
+    padding: 200px 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content-box {
+    width: 100%;
+  }
+
+  .content-box:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 76px 0;
+  }
+
+  .primary-text {
+    margin-bottom: 20px;
+    color: $color-deep-blue;
+  }
+
+  .secondary-text {
+    color: $color-deep-blue;
+  }
+}
+
+.certificate-container {
+  padding: 10px;
+  background: rgba($color: $color-white, $alpha: 0.1);
+  width: 320px;
+  height: 340px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba($color: #000000, $alpha: 0.18);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.blue-background-mask {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
+.blue-background-mask-top {
+  position: absolute;
+  width: 100%;
+  height: 332px;
+  z-index: -20;
+  top: 0;
+  left: 0;
+  background-image: url("/assets/images/reviews-top-blue-pattern.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.gradient-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgb(255, 255, 255));
+}
+
+.certificate-carousel {
+  position: relative;
+
+  button {
+    position: absolute;
+    background: none;
+    opacity: 20%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+
+.previous-btn {
+  top: 50%;
+  left: -60px;
+}
+
+.next-btn {
+  top: 50%;
+  right: -60px;
+}
