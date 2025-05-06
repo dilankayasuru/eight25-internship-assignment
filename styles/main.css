@@ -310,7 +310,7 @@
 .cta .grid-pattern-right {
   position: absolute;
   transform: scaleX(-1) rotate(180deg);
-  right: -155px;
+  right: -260px;
   top: -320px;
   z-index: 10;
 }
