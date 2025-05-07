@@ -1,11 +1,12 @@
+@use "sass:string";
+
 @mixin reveal-animation ($translateFrom, $translateTo, $opacity: true) {
+    transform: $translateFrom;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+
     @if ($opacity) {
         opacity: 0;
     }
-
-    transform: $translateFrom;
-    transition: opacity 0.6s ease-in-out,
-    transform 0.6s ease-in-out;
 
     &.active {
         @if ($opacity) {
@@ -49,11 +50,7 @@
 }
 
 @mixin animated-gradient {
-    $name: animated-gradient-#{unique-id()};
-
-    @keyframes #{$name} {
-        @content;
-    }
+    $name: animated-gradient-#{string.unique-id()};
 
     position: absolute;
     height: 320px;
@@ -63,6 +60,10 @@
     background: radial-gradient(#D8F9FD, #D1C1F7, #0F52BD, rgba(0, 0, 0, 0));
     filter: blur(50px);
     animation: $name 5s linear infinite alternate;
+
+    @keyframes #{$name} {
+        @content;
+    }
 }
 
 .animated-gradient-1 {
