@@ -26,6 +26,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{secrets.SSH_USER}}@${{secrets.SSH_SERVER}} "
             cd ${{ secrets.WORK_DIR }} &&
-            docker-compose pull &&
-            docker-compose up -d --build
+            docker compose pull &&
+            docker compose up -d --build
           "
