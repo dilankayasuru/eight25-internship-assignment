@@ -4,5 +4,5 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./src:/var/www/website:ro
+      - ./src:/var/www/e25Assignment:ro
     restart: always
