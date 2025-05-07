@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "responsive" as *;
 
 .cta {
     display: flex;
@@ -19,11 +20,15 @@
     }
 
     .primary-text {
-        font-size: 80px;
+        font-size: 60px;
         letter-spacing: -3px;
         margin-bottom: 60px;
         color: $color-white;
         line-height: 1;
+
+        @include device(md) {
+            font-size: 80px;
+        }
     }
 
     .grid-pattern-left {
