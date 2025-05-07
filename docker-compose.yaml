@@ -1,0 +1,8 @@
+services:
+  e25-assignment:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/website:ro
+    restart: always
