@@ -78,9 +78,9 @@
   border-radius: 100%;
   background: radial-gradient(#D8F9FD, #D1C1F7, #0F52BD, rgba(0, 0, 0, 0));
   filter: blur(50px);
-  animation: animated-gradient-u8x65i7 5s linear infinite alternate;
+  animation: animated-gradient-ujqzy52 5s linear infinite alternate;
 }
-@keyframes animated-gradient-u8x65i7 {
+@keyframes animated-gradient-ujqzy52 {
   0% {
     left: 80%;
     top: -30%;
@@ -104,9 +104,9 @@
   border-radius: 100%;
   background: radial-gradient(#D8F9FD, #D1C1F7, #0F52BD, rgba(0, 0, 0, 0));
   filter: blur(50px);
-  animation: animated-gradient-u8x65ig 5s linear infinite alternate;
+  animation: animated-gradient-ujqzy62 5s linear infinite alternate;
 }
-@keyframes animated-gradient-u8x65ig {
+@keyframes animated-gradient-ujqzy62 {
   0% {
     top: 0%;
     left: -10%;
@@ -325,7 +325,7 @@
   z-index: 10;
 }
 .mockups-container img:nth-of-type(2) {
-  top: 0;
+  top: -82px;
   right: -35px;
   z-index: 0;
 }
@@ -355,7 +355,7 @@
 }
 .reviews .content {
   max-width: 1536px;
-  padding: 200px 80px;
+  padding: 200px 40px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -365,6 +365,11 @@
 @media (min-width: 1024px) {
   .reviews .content {
     flex-direction: row;
+  }
+}
+@media (min-width: 640px) {
+  .reviews .content {
+    padding: 200px 80px;
   }
 }
 .reviews .content-box {
@@ -387,8 +392,8 @@
 .certificate-container {
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
-  width: 340px;
-  height: 360px;
+  max-width: 340px;
+  max-height: 360px;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
 }
@@ -439,11 +444,23 @@
 .previous-btn {
   top: 50%;
   left: -60px;
+  display: none;
+}
+@media (min-width: 640px) {
+  .previous-btn {
+    display: block;
+  }
 }
 
 .next-btn {
   top: 50%;
   right: -60px;
+  display: none;
+}
+@media (min-width: 640px) {
+  .next-btn {
+    display: block;
+  }
 }
 
 .cta {
@@ -464,11 +481,16 @@
   z-index: 20;
 }
 .cta .primary-text {
-  font-size: 80px;
+  font-size: 60px;
   letter-spacing: -3px;
   margin-bottom: 60px;
   color: #FFFFFF;
   line-height: 1;
+}
+@media (min-width: 768px) {
+  .cta .primary-text {
+    font-size: 80px;
+  }
 }
 .cta .grid-pattern-left {
   position: absolute;
@@ -576,11 +598,16 @@
 }
 
 .primary-text {
-  font-size: 60px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -2px;
   margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .primary-text {
+    font-size: 60px;
+  }
 }
 
 .secondary-text {

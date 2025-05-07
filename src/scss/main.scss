@@ -1,5 +1,6 @@
 @use "variables" as *;
 @use "animation" as *;
+@use "responsive" as *;
 @use "hero";
 @use "banner";
 @use "reviews";
@@ -66,11 +67,15 @@
 }
 
 .primary-text {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -2px;
     margin-bottom: 20px;
+
+    @include device(md) {
+        font-size: 60px;
+    }
 }
 
 .secondary-text {
