@@ -22,10 +22,10 @@ jobs:
       - name: Copy files using SCP
         run: scp -r -o StrictHostKeyChecking=no ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER }}:${{ secrets.WORK_DIR }}
 
-      - name: Deploy using docker composer
+      - name: Deploy using docker compose
         run: |
           ssh -o StrictHostKeyChecking=no ${{secrets.SSH_USER}}@${{secrets.SSH_SERVER}} "
             cd ${{ secrets.WORK_DIR }} &&
-            docker-composer pull &&
-            docker-composer up -d --build
+            docker-compose pull &&
+            docker-compose up -d --build
           "
