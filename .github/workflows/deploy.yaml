@@ -1,0 +1,31 @@
+name: Deploy on server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: install ssh keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.DEGITAL_OCEAN_SSH_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_SERVER }} > ~/.ssh/known_hosts
+
+      - name: Copy files using SCP
+        run: scp -r -o StrictHostKeyChecking=no ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER }}:${{ secrets.WORK_DIR }}
+
+      - name: Deploy using docker composer
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{secrets.SSH_USER}}@${{secrets.SSH_SERVER}} "
+            cd ${{ secrets.WORK_DIR }} &&
+            docker-composer pull &&
+            docker-composer up -d --build
+          "
