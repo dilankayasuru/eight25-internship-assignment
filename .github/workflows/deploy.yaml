@@ -19,7 +19,7 @@ jobs:
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_SERVER }} > ~/.ssh/known_hosts
 
-      - name: Copy files using SCP
+      - name: Copy files using rsync
         run: rsync -avz --exclude='.git' -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER }}:${{ secrets.WORK_DIR }}
 
       - name: Deploy using docker compose
